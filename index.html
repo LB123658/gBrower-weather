@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>gBrowser Weather</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel='icon' href='https://drive.google.com/thumbnail?id=1v9Wtvh2cETuUqE2cxK1E-5MT9N27eMer' type='image/png'/ >
+   <meta name="Description" content="Check the weather with gBrowser" />
+
+<style>
+#logo {
+position: absolute;
+top: 0px;
+left: 0px;
+width: 250px;
+height: 50px;
+font-family: futura;
+font-size: 25px;
+color: grey;
+background: transparent;
+border: none;
+cursor: pointer;
+}
+#logo:hover {
+background: #f0f0f0;
+}
+#lang:hover {
+text-decoration: underline;
+}
+#blue {
+color: #4285f4ff;
+}
+#green {
+color: #8acf26ff;
+}
+#red {
+color: #db4437ff;
+}
+#image {
+position: absolute;
+top: 20%;
+left: 20%;
+width: 450px;
+}
+</style>
+</head>
+<body>
+
+<button id="logo" onclick="reloadPage()" onmouseover="hover()" onmouseout="normalLogo()"><span id="blue">gB</span><span id="red">row</span><span id="green">ser</span> <span id="lang">weather</span></button>
+
+<img src="https://drive.google.com/thumbnail?id=1v9Wtvh2cETuUqE2cxK1E-5MT9N27eMer" title="gBrowser weather" id="image">
+<script>
+function reloadPage() {
+location.reload();
+}
+function hover() {
+document.getElementById("lang").style.textDecoration = "underline";
+}
+function normalLogo() {
+document.getElementById("lang").style.textDecoration = "none";
+}
+</script>
+</body>
+</html>
