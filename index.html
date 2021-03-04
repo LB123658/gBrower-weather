@@ -120,13 +120,20 @@ left: 0px;
 width: 100%;
 visibility: hidden;
 }
+#iradar {
+position: absolute;
+top: 60px;
+left: 0px;
+width: 100%;
+visibility: hidden;
+}
 </style>
 </head>
 <body>
 
 <button id="logo" onclick="reloadPage()" onmouseover="hover()" onmouseout="normalLogo()"><span id="blue">gB</span><span id="red">row</span><span id="green">ser</span> <span id="lang">weather</span></button>
 
-<button class="topNav" id="radar"><span class="material-icons-outlined">track_changes</span> Radar</button>
+<button class="topNav" id="radar" onclick="showRadar()"><span class="material-icons-outlined">track_changes</span> Radar</button>
 
 <button class="topNav" id="temp" onclick="showTemps()"><span class="material-icons-outlined">thermostat</span> Temps</button>
 
@@ -139,7 +146,9 @@ visibility: hidden;
 <a href="https://lb123658.github.io/gBrowser/" target="_blank">
 <button id="account"><span class="material-icons-outlined" style="font-size: 40px;">account_circle</span></button></a>
 
-<img src="tempmap.svg" id="tempMap" />
+<img src="tempmap.svg" id="tempMap"/>
+
+<iframe width="100%" height="100%" src="https://embed.windy.com/embed2.html?lat=15.792&lon=-63.105&detailLat=30.287&detailLon=-63.100&width=650&height=450&zoom=3&level=surface&overlay=wind&product=ecmwf&menu=&message=true&marker=&calendar=now&pressure=&type=map&location=coordinates&detail=&metricWind=default&metricTemp=default&radarRange=-1" frameborder="0" id="iradar"></iframe>
 <script>
 function reloadPage() {
 location.reload();
@@ -152,6 +161,19 @@ document.getElementById("lang").style.textDecoration = "none";
 }
 function showTemps() {
 document.getElementById("tempMap").style.visibility = "visible";
+document.getElementById("temp").style.color = "#db4437ff";
+document.getElementById("radar").style.color = "grey";
+document.getElementById("wind").style.color = "grey";
+document.getElementById("storm").style.color = "grey";
+document.getElementById("location").style.color = "grey";
+}
+function showRadar() {
+document.getElementById("iradar").style.visibility = "visible";
+document.getElementById("temp").style.color = "grey";
+document.getElementById("radar").style.color = "#db4437ff";
+document.getElementById("wind").style.color = "grey";
+document.getElementById("storm").style.color = "grey";
+document.getElementById("location").style.color = "grey";
 }
 </script>
 </body>
