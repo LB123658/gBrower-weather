@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -5,8 +6,33 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel='icon' href='https://drive.google.com/thumbnail?id=1v9Wtvh2cETuUqE2cxK1E-5MT9N27eMer' type='image/png'/ >
    <meta name="Description" content="Check the weather with gBrowser" />
-
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
 <style>
+.material-icons-outlined {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
 #logo {
 position: absolute;
 top: 0px;
@@ -35,11 +61,44 @@ color: #8acf26ff;
 #red {
 color: #db4437ff;
 }
-#image {
+.topNav {
+width: 150px;
+height: 40px;
+border-radius: 25px;
+border: 1px solid lightgrey;
+background: white;
+color: grey;
+font-size: 24px;
+}
+.topNav:hover {
+background: #ebebeb;
+color: grey;
+cursor: pointer;
+}
+#radar {
 position: absolute;
-top: 20%;
-left: 20%;
-width: 450px;
+top: 5px;
+left: 300px;
+}
+#temp {
+position: absolute;
+top: 5px;
+left: 460px;
+}
+#wind {
+position: absolute;
+top: 5px;
+left: 620px;
+}
+#storm {
+position: absolute;
+top: 5px;
+left: 780px;
+}
+#location {
+position: absolute;
+top: 5px;
+left: 940px;
 }
 </style>
 </head>
@@ -47,7 +106,16 @@ width: 450px;
 
 <button id="logo" onclick="reloadPage()" onmouseover="hover()" onmouseout="normalLogo()"><span id="blue">gB</span><span id="red">row</span><span id="green">ser</span> <span id="lang">weather</span></button>
 
-<img src="https://drive.google.com/thumbnail?id=1v9Wtvh2cETuUqE2cxK1E-5MT9N27eMer" title="gBrowser weather" id="image">
+<button class="topNav" id="radar"><span class="material-icons-outlined">track_changes</span> Radar</button>
+
+<button class="topNav" id="temp"><span class="material-icons-outlined">thermostat</span> Temps</button>
+
+<button class="topNav" id="wind"><span class="material-icons-outlined">air</span> Wind</button>
+
+<button class="topNav" id="storm"><span class="material-icons-outlined">storm</span> Storms</button>
+
+<button class="topNav" id="location"><span class="material-icons-outlined">location_on</span> Near you</button>
+
 <script>
 function reloadPage() {
 location.reload();
