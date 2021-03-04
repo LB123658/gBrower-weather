@@ -113,6 +113,13 @@ background: white;
 #account:hover {
 color: black;
 }
+#tempMap {
+position: absolute;
+top: 60px;
+left: 0px;
+width: 100%;
+visibility: hidden;
+}
 </style>
 </head>
 <body>
@@ -121,7 +128,7 @@ color: black;
 
 <button class="topNav" id="radar"><span class="material-icons-outlined">track_changes</span> Radar</button>
 
-<button class="topNav" id="temp"><span class="material-icons-outlined">thermostat</span> Temps</button>
+<button class="topNav" id="temp" onclick="showTemps()"><span class="material-icons-outlined">thermostat</span> Temps</button>
 
 <button class="topNav" id="wind"><span class="material-icons-outlined">air</span> Wind</button>
 
@@ -131,6 +138,8 @@ color: black;
 
 <a href="https://lb123658.github.io/gBrowser/" target="_blank">
 <button id="account"><span class="material-icons-outlined" style="font-size: 40px;">account_circle</span></button></a>
+
+<img src="tempmap.svg" id="tempMap">
 <script>
 function reloadPage() {
 location.reload();
@@ -140,6 +149,9 @@ document.getElementById("lang").style.textDecoration = "underline";
 }
 function normalLogo() {
 document.getElementById("lang").style.textDecoration = "none";
+}
+function showTempMap() {
+document.getElementById("tempMap").style.visibility = "visible";
 }
 </script>
 </body>
