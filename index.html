@@ -100,6 +100,19 @@ position: absolute;
 top: 5px;
 left: 940px;
 }
+#account {
+font-size: 40px;
+position: absolute;
+top: 5px;
+right: 5px;
+color: grey;
+cursor: pointer;
+border: none;
+background: white;
+}
+#account:hover {
+color: black;
+}
 </style>
 </head>
 <body>
@@ -116,6 +129,8 @@ left: 940px;
 
 <button class="topNav" id="location"><span class="material-icons-outlined">location_on</span> Near you</button>
 
+<a href="https://lb123658.github.io/gBrowser/" target="_blank">
+<button id="account"><span class="material-icons-outlined" style="font-size: 40px;">account_circle</span></button></a>
 <script>
 function reloadPage() {
 location.reload();
