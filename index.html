@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -127,6 +126,20 @@ left: 0px;
 width: 100%;
 visibility: hidden;
 }
+#plus {
+position: absolute;
+top: 150px;
+left: 50px;
+z-index: 2;
+visibility: hidden;
+}
+#minus {
+position: absolute;
+top: 210px;
+left: 50px;
+z-index: 2;
+visibility: hidden;
+}
 </style>
 </head>
 <body>
@@ -149,6 +162,11 @@ visibility: hidden;
 <img src="tempmap.svg" id="tempMap"/>
 
 <iframe width="100%" height="100%" src="https://embed.windy.com/embed2.html?lat=15.792&lon=-63.105&detailLat=30.287&detailLon=-63.100&width=650&height=450&zoom=3&level=surface&overlay=wind&product=ecmwf&menu=&message=true&marker=&calendar=now&pressure=&type=map&location=coordinates&detail=&metricWind=default&metricTemp=default&radarRange=-1" frameborder="0" id="iradar"></iframe>
+
+<div id="svgControls">
+<button class="topNav" id="plus" onclick="zoom()">Zoom in</button>
+<button class="topNav" id="minus" onclick="zoomOut()">Zoom out</button>
+</div>
 <script>
 function reloadPage() {
 location.reload();
@@ -166,6 +184,9 @@ document.getElementById("radar").style.color = "grey";
 document.getElementById("wind").style.color = "grey";
 document.getElementById("storm").style.color = "grey";
 document.getElementById("location").style.color = "grey";
+document.getElementById("iradar").style.visibility = "hidden";
+document.getElementById("plus").style.visibility = "visible";
+document.getElementById("minus").style.visibility = "visible";
 }
 function showRadar() {
 document.getElementById("iradar").style.visibility = "visible";
@@ -174,6 +195,14 @@ document.getElementById("radar").style.color = "#db4437ff";
 document.getElementById("wind").style.color = "grey";
 document.getElementById("storm").style.color = "grey";
 document.getElementById("location").style.color = "grey";
+document.getElementById("plus").style.visibility = "hidden";
+document.getElementById("minus").style.visibility = "hidden";
+}
+function zoom() {
+document.getElementById("tempMap").style.width = "200%";
+}
+function zoomOut() {
+document.getElementById("tempMap").style.width = "80%";
 }
 </script>
 </body>
