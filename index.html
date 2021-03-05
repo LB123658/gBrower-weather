@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -94,11 +95,7 @@ position: fixed;
 top: 5px;
 left: 780px;
 }
-#location {
-position: fixed;
-top: 5px;
-left: 940px;
-}
+
 #account {
 font-size: 40px;
 position: fixed;
@@ -140,6 +137,34 @@ left: 50px;
 z-index: 2;
 visibility: hidden;
 }
+.forecast {
+width: 16%;
+height: 300px;
+border-radius: 9px;
+border: 1px solid lightgrey;
+cursor: default;
+}
+#one {
+position: absolute;
+top: 200px;
+left: 10%;
+}
+#imgOne {
+position: absolute;
+top: 10%;
+left: 5%;
+width: 90%;
+}
+#pOne {
+position: absolute;
+bottom: 10%;
+font-family: arial;
+font-size: 18px;
+color: grey;
+width: 100%;
+background: transparent;
+border: none;
+}
 </style>
 </head>
 <body>
@@ -154,7 +179,6 @@ visibility: hidden;
 
 <button class="topNav" id="storm"><span class="material-icons-outlined">storm</span> Storms</button>
 
-<button class="topNav" id="location"><span class="material-icons-outlined">location_on</span> Near you</button>
 
 <a href="https://lb123658.github.io/gBrowser/" target="_blank">
 <button id="account"><span class="material-icons-outlined" style="font-size: 40px;">account_circle</span></button></a>
@@ -167,6 +191,13 @@ visibility: hidden;
 <button class="topNav" id="plus" onclick="zoom()">Zoom in</button>
 <button class="topNav" id="minus" onclick="zoomOut()">Zoom out</button>
 </div>
+<div id="firstPage">
+  <div class="forecast" id="one">
+  <img src="images/partly_cloudy.png" id="imgOne" />
+  <button class="pForecast" id="pOne">Saturday<br>40°F - 26°F</button>
+  </div>
+</div>
+
 <script>
 function reloadPage() {
 location.reload();
