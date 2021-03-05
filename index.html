@@ -165,10 +165,15 @@ width: 100%;
 background: transparent;
 border: none;
 }
+#topNonmove {
+background: white;
+z-index: 2;
+}
 </style>
 </head>
 <body>
 
+<div id="topNonmove">
 <button id="logo" onclick="reloadPage()" onmouseover="hover()" onmouseout="normalLogo()"><span id="blue">gB</span><span id="red">row</span><span id="green">ser</span> <span id="lang">weather</span></button>
 
 <button class="topNav" id="radar" onclick="showRadar()"><span class="material-icons-outlined">track_changes</span> Radar</button>
@@ -182,6 +187,7 @@ border: none;
 
 <a href="https://lb123658.github.io/gBrowser/" target="_blank">
 <button id="account"><span class="material-icons-outlined" style="font-size: 40px;">account_circle</span></button></a>
+</div>
 
 <img src="tempmap.svg" id="tempMap"/>
 
