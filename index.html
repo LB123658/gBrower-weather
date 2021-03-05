@@ -148,7 +148,7 @@ background: #e8e8e8;
 border: 1px solid white;
 }
 #one {
-position: absolute;
+position: fixed;
 top: 200px;
 left: 10%;
 }
@@ -174,7 +174,7 @@ z-index: 2;
 }
 
 #two {
-position: absolute;
+position: fixed;
 top: 200px;
 left: 26%;
 }
@@ -196,7 +196,7 @@ border: none;
 }
 
 #three {
-position: absolute;
+position: fixed;
 top: 200px;
 left: 42%;
 }
@@ -207,6 +207,50 @@ left: 5%;
 width: 90%;
 }
 #pThree {
+position: absolute;
+bottom: 10%;
+font-family: arial;
+font-size: 18px;
+color: grey;
+width: 100%;
+background: transparent;
+border: none;
+}
+
+#four {
+position: fixed;
+top: 200px;
+left: 58%;
+}
+#imgFour {
+position: absolute;
+top: 10%;
+left: 5%;
+width: 90%;
+}
+#pFour {
+position: absolute;
+bottom: 10%;
+font-family: arial;
+font-size: 18px;
+color: grey;
+width: 100%;
+background: transparent;
+border: none;
+}
+
+#five {
+position: fixed;
+top: 200px;
+left: 74%;
+}
+#imgFive {
+position: absolute;
+top: 10%;
+left: 5%;
+width: 90%;
+}
+#pFive {
 position: absolute;
 bottom: 10%;
 font-family: arial;
@@ -248,17 +292,27 @@ border: none;
 <div id="firstPage">
   <div class="forecast" id="one">
   <img src="images/partly_cloudy.png" id="imgOne" />
-  <button class="pForecast" id="pOne">Saturday<br>40°F - 26°F</button>
+  <button class="pForecast" id="pOne">Saturday<br>40°F • 26°F</button>
   </div>
   
   <div class="forecast" id="two">
   <img src="images/partly_cloudy.png" id="imgTwo" />
-  <button class="pForecast" id="pTwo">Sunday<br>42°F - 40°F</button>
+  <button class="pForecast" id="pTwo">Sunday<br>42°F • 40°F</button>
   </div>
   
   <div class="forecast" id="three">
   <img src="images/partly_cloudy.png" id="imgThree" />
-  <button class="pForecast" id="pThree">Monday<br>55°F - 42°F</button>
+  <button class="pForecast" id="pThree">Monday<br>55°F • 42°F</button>
+  </div>
+  
+   <div class="forecast" id="four">
+  <img src="images/partly_cloudy.png" id="imgFour" />
+  <button class="pForecast" id="pFour">Tuesday<br>58°F • 49°F</button>
+  </div>
+  
+   <div class="forecast" id="five">
+  <img src="images/rainy.png" id="imgFive" />
+  <button class="pForecast" id="pFive">Wednesday<br>59°F • 44°F</button>
   </div>
 </div>
 
