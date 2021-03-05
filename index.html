@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -138,11 +137,15 @@ z-index: 2;
 visibility: hidden;
 }
 .forecast {
-width: 16%;
+width: 15%;
 height: 300px;
 border-radius: 9px;
 border: 1px solid lightgrey;
 cursor: default;
+}
+.forecast:hover {
+background: #e8e8e8;
+border: 1px solid white;
 }
 #one {
 position: absolute;
@@ -168,6 +171,50 @@ border: none;
 #topNonmove {
 background: white;
 z-index: 2;
+}
+
+#two {
+position: absolute;
+top: 200px;
+left: 26%;
+}
+#imgTwo {
+position: absolute;
+top: 10%;
+left: 5%;
+width: 90%;
+}
+#pTwo {
+position: absolute;
+bottom: 10%;
+font-family: arial;
+font-size: 18px;
+color: grey;
+width: 100%;
+background: transparent;
+border: none;
+}
+
+#three {
+position: absolute;
+top: 200px;
+left: 42%;
+}
+#imgThree {
+position: absolute;
+top: 10%;
+left: 5%;
+width: 90%;
+}
+#pThree {
+position: absolute;
+bottom: 10%;
+font-family: arial;
+font-size: 18px;
+color: grey;
+width: 100%;
+background: transparent;
+border: none;
 }
 </style>
 </head>
@@ -197,10 +244,21 @@ z-index: 2;
 <button class="topNav" id="plus" onclick="zoom()">Zoom in</button>
 <button class="topNav" id="minus" onclick="zoomOut()">Zoom out</button>
 </div>
+
 <div id="firstPage">
   <div class="forecast" id="one">
   <img src="images/partly_cloudy.png" id="imgOne" />
   <button class="pForecast" id="pOne">Saturday<br>40°F - 26°F</button>
+  </div>
+  
+  <div class="forecast" id="two">
+  <img src="images/partly_cloudy.png" id="imgTwo" />
+  <button class="pForecast" id="pTwo">Sunday<br>42°F - 40°F</button>
+  </div>
+  
+  <div class="forecast" id="three">
+  <img src="images/partly_cloudy.png" id="imgThree" />
+  <button class="pForecast" id="pThree">Monday<br>55°F - 42°F</button>
   </div>
 </div>
 
@@ -220,10 +278,10 @@ document.getElementById("temp").style.color = "#db4437ff";
 document.getElementById("radar").style.color = "grey";
 document.getElementById("wind").style.color = "grey";
 document.getElementById("storm").style.color = "grey";
-document.getElementById("location").style.color = "grey";
 document.getElementById("iradar").style.visibility = "hidden";
 document.getElementById("plus").style.visibility = "visible";
 document.getElementById("minus").style.visibility = "visible";
+document.getElementById("forecast").style.visibility = "hidden";
 }
 function showRadar() {
 document.getElementById("iradar").style.visibility = "visible";
@@ -231,9 +289,9 @@ document.getElementById("temp").style.color = "grey";
 document.getElementById("radar").style.color = "#db4437ff";
 document.getElementById("wind").style.color = "grey";
 document.getElementById("storm").style.color = "grey";
-document.getElementById("location").style.color = "grey";
 document.getElementById("plus").style.visibility = "hidden";
 document.getElementById("minus").style.visibility = "hidden";
+document.getElementById("forecast").style.visibility = "hidden";
 }
 function zoom() {
 document.getElementById("tempMap").style.width = "200%";
