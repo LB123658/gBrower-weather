@@ -8,9 +8,14 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
 <style>
+
+body::-webkit-scrollbar {
+    display: none;  
+   }
 body {
-overflow: hidden;
-}  
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}   
 .material-icons-outlined {
   font-family: 'Material Icons';
   font-weight: normal;
