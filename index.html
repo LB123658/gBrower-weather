@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -45,9 +46,7 @@ background: transparent;
 border: none;
 cursor: pointer;
 }
-#logo:hover {
-background: #f0f0f0;
-}
+
 #lang:hover {
 text-decoration: underline;
 }
@@ -65,7 +64,7 @@ width: 150px;
 height: 40px;
 border-radius: 25px;
 border: 1px solid lightgrey;
-background: white;
+background: transparent;
 color: grey;
 font-size: 24px;
 }
@@ -103,10 +102,10 @@ right: 5px;
 color: grey;
 cursor: pointer;
 border: none;
-background: white;
+background: transparent;
 }
 #account:hover {
-color: black;
+color: #4285f4ff;
 }
 #tempMap {
 position: absolute;
@@ -260,9 +259,26 @@ width: 100%;
 background: transparent;
 border: none;
 }
+.elMode {
+color: grey;
+cursor: pointer;
+border: none;
+background: transparent;
+font-size: 35px;
+}
+#lightMode {
+position: fixed; 
+left: 5px;
+bottom: 5px;
+}
+#darkMode {
+position: fixed; 
+left: 45px;
+bottom: 5px;
+}
 </style>
 </head>
-<body>
+<body id="back">
 
 <div id="topNonmove">
 <button id="logo" onclick="reloadPage()" onmouseover="hover()" onmouseout="normalLogo()"><span id="blue">gB</span><span id="red">row</span><span id="green">ser</span> <span id="lang">weather</span></button>
@@ -316,6 +332,14 @@ border: none;
   </div>
 </div>
 
+<button class="elMode" id="lightMode" onclick="lightMode()"><span class="material-icons-outlined">
+light_mode
+</span></button>
+
+<button class="elMode" id="darkMode" onclick="darkMode()"><span class="material-icons-outlined">
+dark_mode
+</span></button>
+
 <script>
 function reloadPage() {
 location.reload();
@@ -360,6 +384,12 @@ document.getElementById("tempMap").style.width = "200%";
 }
 function zoomOut() {
 document.getElementById("tempMap").style.width = "80%";
+}
+function lightMode() {
+document.getElementById("back").style.background = "white";
+}
+function darkMode() {
+document.getElementById("back").style.background = "#282828";
 }
 </script>
 </body>
